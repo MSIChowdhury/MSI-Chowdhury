@@ -186,10 +186,3 @@ scrollToTopBtn.addEventListener('click', () => {
         behavior: 'smooth'
     });
 });
-
-// Initialize AOS (Animate on Scroll) for awards section
-AOS.init({
-    duration: 1000,
-    once: true,
-    offset: 200
-});
