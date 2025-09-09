@@ -3,267 +3,882 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MD. Sameer Iqbal Chowdhury - Robotics and Mechatronics Engineer</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <title>MD. Sameer Iqbal Chowdhury - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: black;
+            line-height: 1.6;
+        }
+
+        nav {
+            background-color: #f8f9fa;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav li {
+            margin: 0 1rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: black;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: #e9ecef;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+            margin: 2rem 0 1rem 0;
+            border-bottom: 2px solid #333;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            color: #555;
+            margin: 1.5rem 0 0.5rem 0;
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #333;
+        }
+
+        .profile-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .elevator-pitch {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid #333;
+        }
+
+        .research-item, .project-item, .experience-item, .education-item, .award-item {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            border-left: 4px solid #333;
+        }
+
+        .project-images {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .project-figure {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        figcaption {
+            text-align: center;
+            font-style: italic;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .skill-category {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        ul {
+            margin-left: 1.5rem;
+        }
+
+        li {
+            margin: 0.5rem 0;
+        }
+
+        .contact-info {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            background-color: #333;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: #555;
+        }
+
+        .status-badge {
+            background-color: #333;
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 0.25rem 0;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+            
+            .profile-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .project-images {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="hamburger-menu">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#research-interests">Research Interests</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#awards">Awards</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showPage('home')" class="nav-link active">Home</a></li>
+            <li><a href="#" onclick="showPage('bio')" class="nav-link">Bio</a></li>
+            <li><a href="#" onclick="showPage('research')" class="nav-link">Research Interests</a></li>
+            <li><a href="#" onclick="showPage('teaching')" class="nav-link">Teaching</a></li>
+            <li><a href="#" onclick="showPage('service')" class="nav-link">Service</a></li>
+            <li><a href="#" onclick="showPage('projects')" class="nav-link">Projects</a></li>
+            <li><a href="#" onclick="showPage('publications')" class="nav-link">Publications</a></li>
+            <li><a href="#" onclick="showPage('education')" class="nav-link">Education</a></li>
+            <li><a href="#" onclick="showPage('awards')" class="nav-link">Awards</a></li>
+            <li><a href="#" onclick="showPage('contact')" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
 
-    <!-- <button id="theme-toggle" class="theme-toggle">
-        <i class="fas fa-sun"></i>
-        <i class="fas fa-moon"></i>
-    </button> -->
-
-    <main>
-        <section id="home" class="section">
+    <div class="container">
+        <!-- Home Page -->
+        <div id="home" class="page active">
             <h1>MD. Sameer Iqbal Chowdhury</h1>
-            <p class="tagline">Robotics and Mechatronics Engineering Grad | IoT Enthusiast | Aspiring Researcher</p>
-            <div class="cta-buttons">
-                <a href="#contact" class="btn primary">Contact Me</a>
-                <a href="#projects" class="btn secondary">View Projects</a>
-                <a href="#publications" class="btn secondary">View Publications</a>
-            </div>
-        </section>
-
-        <section id="about" class="section">
-            <h2>About Me</h2>
-            <div class="about-content">
+            <div class="profile-section">
                 <img src="images/profile.jpeg" alt="MD. Sameer Iqbal Chowdhury" class="profile-image">
-                <div class="about-text">
-                    <p>As an aspiring graduate student in Robotics and Mechatronics Engineering, I am deeply passionate about automated and industrial systems. My experience spans a wide array of sensors, actuation systems, microcontrollers, and single-board computers, with a particular focus on IoT-based systems.</p>
-                    <p>My expertise lies in interfacing water quality sensors, specifically for measuring Electrical Conductivity (EC) and pH, skills I honed during my final year project. I am also keenly interested in Industrial IoT (IIoT) and its transformative potential in industrial automation.</p>
-                    <p>With hands-on experience in Programmable Logic Controllers (PLCs) and a strong foundation in technical writing, I am well-equipped to contribute to cutting-edge research and development in robotics and automation. My goal is to pursue graduate studies to further advance my knowledge and make meaningful contributions to the field.</p>
+                <div class="profile-info">
+                    <h2>Doctoral Student</h2>
+                    <p><strong>Current Position:</strong> Doctoral Instructional Assistant, CS 2308 (Foundations of Computer Science II) - Fall 2025<br>
+                    <strong>Instructor:</strong> Dr. Jill M. Seaman</p>
+                    <p><strong>Research Focus:</strong> Application Deep Learning in Intelligent Sensing and Autonomous Navigation for Robotics</p>
                 </div>
             </div>
-        </section>
-
-        <section id="skills" class="section">
-            <h2>Skills</h2>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>Technical Skills</h3>
-                    <ul>
-                        <li>Python</li>
-                        <li>C/C++</li>
-                        <li>Arduino</li>
-                        <li>Raspberry Pi</li>
-                        <li>PLCs</li>
-                        <li>IoT Protocols (MQTT, Modbus)</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Research Skills</h3>
-                    <ul>
-                        <li>Data and Statistical Analysis</li>
-                        <li>Experimental Design</li>
-                        <li>Technical Writing</li>
-                        <li>Literature Review</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Software & Tools</h3>
-                    <ul>
-                        <li>MATLAB</li>
-                        <li>Proteus</li>
-                        <li>Arduino IDE</li>
-                        <li>Git/GitHub</li>
-                        <li>LaTeX</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Soft Skills</h3>
-                    <ul>
-                        <li>Team Leadership</li>
-                        <li>Project Management</li>
-                        <li>Problem Solving</li>
-                        <li>Communication</li>
-                    </ul>
-                </div>
+            
+            <div class="elevator-pitch">
+                <h3>Elevator Pitch</h3>
+                <p>Hey! I am a recent graduate in Robotics and Mechatronics Engineering from the University of Dhaka, Bangladesh. I have passion for advancing autonomous robotic systems through the application of novel deep learning approaches. My expertise lies in integrating sophisticated sensing technologies with intelligent navigation algorithms to create more capable and reliable robotic systems. I'm currently a Doctoral student at Texas State University and serving as a Doctoral Instructional Assistant. I aim to contribute to the next generation of autonomous robots that can perceive, learn, and adapt to complex real-world environments.</p>
             </div>
-        </section>
 
-        <section id="experience" class="section">
-            <h2>Professional Experience</h2>
-            <div class="experience-item">
-                <h3>Research Assistant</h3>
-                <p class="experience-details">University of Dhaka | December 2023 - Present</p>
-                <p>Project: "Ma (Mother) Mental Health: Artificial Intelligence-Enabled Detection of Perinatal Depression"</p>
+            <h2>Quick Overview</h2>
+            <ul>
+                <li><strong>Education:</strong> B.Sc. in Robotics and Mechatronics Engineering, University of Dhaka (2024)</li>
+                <li><strong>Current Role:</strong> Doctoral Student at Texas State Universityu and Doctoral Instructional Assistant for CS 2308 (Foundations of Computer Science II)</li>
+                <li><strong>Research Interest:</strong> Deep learning applications in robotic sensing and autonomous navigation</li>
+                <!-- <li><strong>Key Projects:</strong> IoT-enabled Hydroponics System, Q-learning Crawler Robot</li>
+                <li><strong>Publications:</strong> Conference paper on NAO robot as language instructor (ICRAI 2024)</li> -->
+            </ul>
+        </div>
+
+        <!-- Bio Page -->
+        <div id="bio" class="page">
+            <h1>Biography</h1>
+            
+            <h2>Professional Background</h2>
+            <p>As a recent graduate in Robotics and Mechatronics Engineering from the University of Dhaka, I have developed a strong foundation in automated and industrial systems. My academic journey has been complemented by practical experience in IoT-based systems, sensor integration, and machine learning applications in robotics.</p>
+
+            <p>I'm currently a Doctoral Student at Texas State University under the supervision of Dr. Tsz-Chiu Au, and I'm also a Doctoral Instructional Assistant for the CS 2308 (Fundamentals of Computer Science II) course under Dr. Jill M. Seaman for Fall 2025, where I help students understand fundamental computer science concepts while continuing to develop my own research interests.</p>
+
+            <h2>Research Philosophy</h2>
+            <p>My research focuses on the intersection of deep learning and robotics, specifically targeting improvements in sensing capabilities and autonomous navigation. I believe that the future of robotics lies in creating systems that can not only perceive their environment accurately but also learn and adapt their navigation strategies based on experience.</p>
+
+            <h2>Technical Expertise</h2>
+            <p>My expertise spans a wide array of sensors, actuation systems, microcontrollers, and single-board computers. I am also deeply interested in Industrial IoT (IIoT) and its transformative potential in industrial automation.</p>
+
+            <h2>Future Goals</h2>
+            <p>I aim to pursue graduate studies to further advance my knowledge in deep learning applications for robotics and make meaningful contributions to autonomous navigation systems. My goal is to develop more intelligent, adaptive robotic systems that can operate effectively in complex, dynamic environments.</p>
+        </div>
+
+        <!-- Research Page -->
+        <div id="research" class="page">
+            <h1>Research Interests</h1>
+
+            <div class="research-item">
+                <h3>Deep Learning in Robotic Sensing</h3>
+                <p>My primary research interest focuses on leveraging deep learning techniques to enhance robotic sensing capabilities. This includes developing neural networks that can process multi-modal sensor data to create more accurate and robust environmental perception systems.</p>
+                
+                <h4>Key Areas:</h4>
                 <ul>
-                    <li>Efficiently conducted data collection sessions with subjects from multiple institutions, ranging from individuals diagnosed with Major Depressive Disorder (MDD) to perinatal mothers diagnosed with maternal depression, ensuring high standards.</li>
-                    <li>Managed demographic data and multimodal data (video, audio, and eye tracking) of subjects.</li>
-                    <li>Curated a comprehensive dataset for AI-based analysis of perinatal depression.</li>
-                    <li>Collaborated with interdisciplinary teams to ensure data integrity and research compliance.</li>
+                    <li>Computer vision for object detection and recognition in robotic applications</li>
+                    <li>Sensor fusion using deep learning for improved environmental understanding</li>
+                    <li>Real-time processing of sensory data for autonomous systems</li>
+                    <li>Adaptive sensing systems that can learn from environmental changes</li>
                 </ul>
             </div>
-        </section>
 
-        <section id="research-interests" class="section">
-            <h2>Research Interests</h2>
-            <ul>
-                <li>Internet of Things (IoT)</li>
-                <li>IoT in Agriculture</li>
-                <li>Precision Agriculture</li>
-                <li>Industrial IoT (IIoT)</li>
-            </ul>
-        </section>
-
-        <section id="publications" class="section">
-            <h2>Publications</h2>
-            <div class="publication-item">
-                <h3>Exploring the Efficacy of NAO Robot as a Language Instructor</h3>
-                <p class="publication-details">Authors: Ipshita Ahmed Moon, Humayra Rashid, Safayat Hasan, MD. Sameer Iqbal Chowdhury, Shifat-E-Arman, and Lafifa Jamal</p>
-                <p class="publication-venue">10th International Conference for Robotics and Artificial Intelligence (ICRAI), 2024</p>
-                <p class="publication-status">Status: <span class="status-badge">Accepted for Presentation</span></p>
-                <p class="publication-description">I contributed as a joint first author to this work that involved having an NAO robot serving as a Japanese language tutor. This project utilizes double control groups of human tutors and mobile language learning applications to demonstrate the effectiveness of the NAO robot as a language tutor against traditional methods.</p>
-                <!-- <a href="#" class="publication-link">Read More</a> -->
+            <div class="research-item">
+                <h3>Autonomous Navigation Systems</h3>
+                <p>I am particularly interested in developing intelligent navigation systems that combine traditional path planning with modern deep learning approaches to create more adaptive and efficient autonomous robots.</p>
+                
+                <h4>Research Focus Areas:</h4>
+                <ul>
+                    <li>Deep reinforcement learning for path planning and navigation</li>
+                    <li>SLAM (Simultaneous Localization and Mapping) using neural networks</li>
+                    <li>Obstacle avoidance using predictive models</li>
+                    <li>Multi-robot coordination and swarm navigation</li>
+                </ul>
             </div>
-        </section>
 
-        <section id="projects" class="section">
-            <h2>Projects</h2>
+            <div class="research-item">
+                <h3>Industrial IoT and Smart Manufacturing</h3>
+                <p>Building on my background in IoT systems, I am exploring how deep learning can enhance Industrial IoT applications, particularly in smart manufacturing and automated quality control systems.</p>
+                
+                <h4>Areas of Interest:</h4>
+                <ul>
+                    <li>Predictive maintenance using sensor data and machine learning</li>
+                    <li>Quality control automation using computer vision</li>
+                    <li>Smart factory optimization through intelligent sensor networks</li>
+                    <li>Edge computing for real-time industrial applications</li>
+                </ul>
+            </div>
+
+            <h2>Current Research Activities</h2>
+            <p>Currently working as a remote Research Assistant on the "Ma (Mother) Mental Health: Artificial Intelligence-Enabled Detection of Perinatal Depression" project at the University of Dhaka, where I manage multimodal data collection and curation for AI-based analysis. At this time, I am contributing towards the writing of a scientific paper for the work to be published in a high-impact journal.</p>
+
+            <h2>Future Research Directions</h2>
+            <p>I am particularly interested in pursuing doctoral research that combines deep learning with sensing technologies and practical robotic applications, focusing on creating more intelligent and adaptive autonomous systems for both industrial and service robotics applications.</p>
+        </div>
+
+        <!-- Teaching Page -->
+        <div id="teaching" class="page">
+            <h1>Teaching Experience</h1>
+
+            <div class="experience-item">
+                <h3>Teaching Assistant - CS 2308 (Foundations of Computer Science II)</h3>
+                <p><strong>Institution:</strong> Texas State University<br>
+                <strong>Semester:</strong> Fall 2025<br>
+                <strong>Instructor:</strong> Dr. Jill M. Seaman</p>
+                
+                <h4>Responsibilities:</h4>
+                <ul>
+                    <li>Assist students with programming assignments and course material</li>
+                    <li>Hold office hours to provide one-on-one support</li>
+                    <!-- <li>Grade assignments and provide constructive feedback</li>
+                    <li>Conduct supplemental instruction sessions</li> -->
+                    <li>Help maintain course materials and resources</li>
+                </ul>
+
+                <!-- <h4>Skills Developed:</h4>
+                <ul>
+                    <li>Effective communication of complex technical concepts</li>
+                    <li>Student mentorship and guidance</li>
+                    <li>Course material development and organization</li>
+                    <li>Assessment and feedback techniques</li>
+                </ul> -->
+            </div>
+
+            <h2>Teaching Philosophy</h2>
+            <p>I believe in making complex technical concepts accessible through practical examples and hands-on learning. My approach focuses on helping students understand not just the "how" but also the "why" behind programming concepts, encouraging critical thinking and problem-solving skills.</p>
+
+            <h2>Areas of Expertise in Teaching</h2>
+            <ul>
+                <li>Programming fundamentals (C++, Python)</li>
+                <!-- <li>Data structures and algorithms</li> -->
+                <li>Robotics and embedded systems</li>
+                <li>IoT and sensor integration</li>
+                <li>Machine learning basics</li>
+            </ul>
+
+            <h2>Student Feedback Approach</h2>
+            <p>I emphasize providing constructive, specific feedback that helps students improve their programming skills while building confidence. I encourage questions and create a supportive learning environment where students feel comfortable making mistakes and learning from them.</p>
+        </div>
+
+          <!-- Service Page -->
+        <div id="service" class="page">
+            <h1>Service & Extra-Curricular Activities</h1>
+
+            <div class="research-item">
+                <h3>Leadership Activities</h3>
+                <h4>Chair - IEEE Robotics and Mechatronics Engineering Student Branch</h4>
+                <p><strong>Institution:</strong> University of Dhaka<br>
+                <strong>Duration:</strong> January 2023 - April 2024</p>
+                
+                <h4>Leadership Contributions:</h4>
+                <ul>
+                    <li>Organized several workshops and interactive sessions (both online and in-person)</li>
+                    <li>Coordinated industry expert experience-sharing sessions</li>
+                    <li>Led student branch activities and member engagement initiatives</li>
+                    <li>Developed professional development programs for engineering students</li>
+                </ul>
+            </div>
+
+            <div class="research-item">
+                <h3>Volunteer Activities</h3>
+                <h4>Mentor - Bangladesh Robot Olympiad (BdRO)</h4>
+                <p><strong>Duration:</strong> September 2019 - September 2022</p>
+                
+                <h4>Volunteer Contributions:</h4>
+                <ul>
+                    <li>Conducted robotics workshops in multiple high schools nationwide</li>
+                    <li>Developed engaging quizzes and educational content for BdRO participants</li>
+                    <li>Volunteered to organize national rounds of the 2nd to 5th editions of the BdRO</li>
+                    <li>Mentored high school students in robotics concepts and competition preparation</li>
+                </ul>
+            </div>
+
+            <!-- <div class="research-item">
+                <h3>Research Service</h3>
+                <h4>Research Assistant - Mental Health AI Project</h4>
+                <p><strong>Supervisor:</strong> Dr. Sejuti Rahman<br>
+                <strong>Duration:</strong> December 2023 - Present<br>
+                <strong>Institution:</strong> University of Dhaka</p>
+                
+                <h4>Service Contributions:</h4>
+                <ul>
+                    <li>Conducted data collection sessions with subjects from multiple institutions</li>
+                    <li>Managed subjects ranging from individuals with Major Depressive Disorder (MDD) to perinatal mothers</li>
+                    <li>Managed demographic data and multimodal data (video, audio, eye tracking)</li>
+                    <li>Curated comprehensive datasets for AI-based analysis</li>
+                    <li>Completed writing one scientific manuscript for publication</li>
+                </ul>
+            </div>
+
+            <div class="research-item">
+                <h3>Additional Research Service</h3>
+                <h4>Research Assistant - IoT Hydroponics Project</h4>
+                <p><strong>Supervisor:</strong> Dr. Lafifa Jamal<br>
+                <strong>Duration:</strong> January 2023 - January 2024<br>
+                <strong>Institution:</strong> University of Dhaka</p>
+                
+                <h4>Research Contributions:</h4>
+                <ul>
+                    <li>Proposed resource-efficient automated hydroponics system with IoT capabilities</li>
+                    <li>Designed novel algorithm to mitigate erroneous sensor data from microcontrollers</li>
+                    <li>Reduced instances of erroneous actuation in automated systems</li>
+                    <li>Completed writing one scientific manuscript for publication</li>
+                </ul>
+            </div>
+
+            <div class="research-item">
+                <h3>Academic Service</h3>
+                <h4>Teaching Assistant</h4>
+                <p>Currently serving as a Teaching Assistant for CS 2308, contributing to the educational mission by supporting student learning and course administration.</p>
+                
+                <h4>Service Activities:</h4>
+                <ul>
+                    <li>Student mentoring and academic support</li>
+                    <li>Course material development and maintenance</li>
+                    <li>Assessment and grading services</li>
+                    <li>Office hours and supplemental instruction</li>
+                </ul>
+            </div>
+
+            <div class="research-item">
+                <h3>Professional Development</h3>
+                <h4>Research Collaboration</h4>
+                <p>Actively participating in interdisciplinary research collaborations, contributing to projects that bridge engineering, computer science, and healthcare applications.</p>
+                
+                <h4>Conference Participation:</h4>
+                <ul>
+                    <li>Accepted for presentation at ICRAI 2024</li>
+                    <li>Contributing author to robotics and AI research</li>
+                    <li>Peer collaboration on multiple research projects</li>
+                </ul>
+            </div> -->
+
+            <h2>Community Involvement</h2>
+            <p>I believe in giving back to the academic and professional community through research collaboration, student mentorship, and knowledge sharing. My service activities reflect my commitment to advancing both education and research in robotics and artificial intelligence.</p>
+
+            <h2>Future Service Goals</h2>
+            <p>I aim to expand my service contributions through:</p>
+            <ul>
+                <li>Peer review activities for academic journals</li>
+                <li>Organizing workshops and seminars on robotics and IoT</li>
+                <li>Mentoring undergraduate students in research projects</li>
+                <li>Contributing to open-source robotics and AI projects</li>
+            </ul>
+        </div>
+
+        <!-- Projects Page -->
+        <div id="projects" class="page">
+            <h1>Projects</h1>
+
             <div class="project-item">
                 <h3>IoT-enabled Scalable Closed Hydroponics System with Smart Parameter Control</h3>
-                <p class="project-details">Undergraduate Thesis Project | January 2023 - January 2024</p>
+                <p><strong>Duration:</strong> January 2023 - January 2024<br>
+                <strong>Type:</strong> Undergraduate Thesis Project<br>
+                <strong>Funding:</strong> ICT Division under the ICT Innovation Fund</p>
+
                 <div class="project-images">
                     <figure class="project-figure">
-                        <img src="images/hydroponics-project1.JPG" class="project-image lazy" data-src="images/hydroponics-project1.JPG" alt="IoT Hydroponics System 1">
+                        <img src="images/hydroponics-project1.JPG" class="project-image" alt="IoT Hydroponics System Setup">
                         <figcaption>Overall system setup before the first experiment</figcaption>
                     </figure>
                     <figure class="project-figure">
-                        <img src="images/hydroponics-project2.png" class="project-image lazy" data-src="images/hydroponics-project2.png" alt="IoT Hydroponics System 2">
+                        <img src="images/hydroponics-project2.png" class="project-image" alt="System Block Diagram">
                         <figcaption>Full system block diagram</figcaption>
                     </figure>
                     <figure class="project-figure">
-                        <img src="images/hydroponics-project3.jpg" class="project-image lazy" data-src="images/hydroponics-project3.jpg" alt="IoT Hydroponics System 3">
+                        <img src="images/hydroponics-project3.jpg" class="project-image" alt="Lettuce Growth Results">
                         <figcaption>Lettuce grown inside the system</figcaption>
                     </figure>
                 </div>
+
+                <h4>Project Overview:</h4>
                 <ul>
-                    <li>Designed and implemented an IoT-based scalable closed hydroponics system.</li>
-                    <li>Monitored and controlled physical parameters required for plant growth (pH, Electrical Conductivity, CO2, Humidity, Air Temperature, Water Temperature).</li>
-                    <li>Utilized Arduino Nano and Arduino Mega as nodes to handle sensor and actuator data separately.</li>
-                    <li>Implemented an XGBoost-based classification method for independent control actions.</li>
-                    <li>Developed a web-based dashboard for real-time monitoring with data visualizations and live video feed.</li>
-                    <li>Project fully funded by the ICT Division under the ICT Innovation Fund.</li>
-                    <li>Currently under the first round of reviews at Smart Agricultural Technology.</li>
+                    <li>Designed and implemented an IoT-based scalable closed hydroponics system</li>
+                    <li>Monitored and controlled physical parameters (pH, EC, CO2, Humidity, Temperature)</li>
+                    <li>Utilized Arduino Nano and Arduino Mega as nodes for sensor and actuator management</li>
+                    <li>Implemented XGBoost-based classification for independent control actions</li>
+                    <li>Developed web-based dashboard with real-time monitoring and live video feed</li>
                 </ul>
-                <p><strong>Relevance to Graduate Studies:</strong> This project demonstrates my ability to design and implement complex IoT systems, integrate multiple sensors and actuators, and apply machine learning techniques to real-world problems in agriculture and automation.</p>
+
+                <h4>Technologies Used:</h4>
+                <ul>
+                    <li>Arduino (Nano, Mega), IoT protocols, sensor integration</li>
+                    <li>Machine learning (XGBoost), web development</li>
+                    <li>Data visualization and real-time monitoring systems</li>
+                </ul>
+
+                <p><strong>Status:</strong> Currently under first round of reviews at Smart Agricultural Technology journal</p>
             </div>
+
             <div class="project-item">
-                <h3>2 DOF, Single Claw Crawler Bot using Q-learning</h3>
-                <p class="project-details">Self-funded Lab Project under RME 3211: Intelligent Systems and Robots Lab | October 2022 - November 2022</p>
+                <h3>2 DOF Single Claw Crawler Bot using Q-learning</h3>
+                <p><strong>Duration:</strong> October 2022 - November 2022<br>
+                <strong>Course:</strong> RME 3211: Intelligent Systems and Robots Lab<br>
+                <strong>Type:</strong> Self-funded Lab Project</p>
+
                 <div class="project-images">
                     <figure class="project-figure">
-                        <img src="images/2DOF.JPG" class="project-image lazy" data-src="images/2DOF.JPG" alt="2 DOF Crawler 1">
+                        <img src="images/2DOF.JPG" class="project-image" alt="Front view of crawler bot">
                         <figcaption>Front view of the 2 DOF single claw crawler bot</figcaption>
                     </figure>
                     <figure class="project-figure">
-                        <img src="images/2DOFTOP.JPG" class="project-image lazy" data-src="images/2DOFTOP.JPG" alt="2 DOF Crawler 2">
+                        <img src="images/2DOFTOP.JPG" class="project-image" alt="Top view of crawler bot">
                         <figcaption>Top view of the 2 DOF single claw crawler bot</figcaption>
                     </figure>
                 </div>
-                <ul>
-                    <li>Designed and built a 2 Degree-of-Freedom (DOF), single-claw crawler robot.</li>
-                    <li>Implemented Q-learning to determine the best sequence of servo angles for maximum displacement.</li>
-                    <li>Utilized epsilon-greedy algorithm to ensure faster convergence of Q-learning.</li>
-                </ul>
-                <p><strong>Relevance to Graduate Studies:</strong> This project showcases my skills in robotics design, reinforcement learning, and algorithm implementation, which are crucial for advanced research in autonomous robotic systems.</p>
-            </div>
-        </section>
 
-        <section id="education" class="section">
-            <h2>Education</h2>
+                <h4>Project Details:</h4>
+                <ul>
+                    <li>Designed and built a 2 Degree-of-Freedom single-claw crawler robot</li>
+                    <li>Implemented Q-learning to optimize servo angle sequences for maximum displacement</li>
+                    <li>Utilized epsilon-greedy algorithm for faster Q-learning convergence</li>
+                    <li>Successfully demonstrated autonomous learning and movement optimization</li>
+                </ul>
+
+                <h4>Key Learning Outcomes:</h4>
+                <ul>
+                    <li>Reinforcement learning implementation in robotics</li>
+                    <li>Robot kinematics and mechanical design</li>
+                    <li>Algorithm optimization and convergence analysis</li>
+                </ul>
+            </div>
+
+            <!-- <h2>Relevance to Graduate Studies</h2>
+            <p>These projects demonstrate my ability to:</p>
+            <ul>
+                <li>Design and implement complex IoT and robotic systems</li>
+                <li>Integrate multiple sensors and actuators effectively</li>
+                <li>Apply machine learning techniques to real-world problems</li>
+                <li>Work with both hardware and software components</li>
+                <li>Conduct research from conception to publication</li>
+            </ul> -->
+        </div>
+
+        <!-- Publications Page -->
+        <div id="publications" class="page">
+            <h1>Publications</h1>
+
+            <div class="research-item">
+                <h3>Exploring the Efficacy of NAO Robot as a Language Instructor</h3>
+                <p><strong>Authors:</strong> Ipshita Ahmed Moon, Humayra Rashid, Safayat Hasan, MD. Sameer Iqbal Chowdhury, Shifat-E-Arman, and Lafifa Jamal</p>
+                <p><strong>Conference:</strong> 10th International Conference for Robotics and Artificial Intelligence (ICRAI), 2024</p>
+                <p><strong>Status:</strong> <span class="status-badge">Accepted and published</span></p>
+                
+                <h4>Abstract:</h4>
+                <p>This research investigates the effectiveness of humanoid robots, specifically the NAO robot, as language instructors for Japanese language learning. The study employs a controlled experimental design comparing the NAO robot's teaching effectiveness against traditional methods including human tutors and mobile language learning applications.</p>
+                
+                <h4>My Contribution:</h4>
+                <p>As a joint first author, I contributed to the experimental design, data collection methodology, and analysis of the robot's performance as a language tutor. This work demonstrates the potential of social robotics in educational applications.</p>
+                
+                <h4>Key Findings:</h4>
+                <ul>
+                    <li>Demonstrated measurable effectiveness of NAO robot as language instructor</li>
+                    <li>Compared performance against human tutors and digital applications</li>
+                    <li>Identified optimal interaction patterns for robot-assisted learning</li>
+                    <li>Contributed to understanding of social robotics in education</li>
+                </ul>
+            </div>
+
+            <h2>Papers in Review</h2>
+            <div class="research-item">
+                <h3>IoT-enabled Scalable Closed Hydroponics System with Smart Parameter Control</h3>
+                <p><strong>Journal:</strong> Smart Agricultural Technology</p>
+                <p><strong>Status:</strong> <span class="status-badge">Under Review - First Round</span></p>
+                <p>This paper presents the complete design, implementation, and evaluation of our IoT-based hydroponics system, including machine learning integration for autonomous parameter control.</p>
+            </div>
+
+            <h2>Research Impact</h2>
+            <p>My research contributes to two important areas:</p>
+            <ul>
+                <li><strong>Social Robotics:</strong> Advancing understanding of human-robot interaction in educational contexts</li>
+                <li><strong>Agricultural Technology and Intelligent Sensing:</strong> Developing intelligent systems for sustainable food production and equipping them with a reliable sensing algorithm that minimizes catastrophically erroneous sensor data</li>
+            </ul>
+
+            <h2>Future Publications</h2>
+            <p>I am currently working on several research directions that will lead to future publications:</p>
+            <ul>
+                <li>Deep learning applications in robotic sensing</li>
+                <li>Autonomous navigation using reinforcement learning</li>
+                <li>Multi-modal sensor fusion for robot perception</li>
+                <!-- <li>Industrial IoT applications in smart manufacturing</li> -->
+            </ul>
+        </div>
+
+        <!-- Education Page -->
+        <div id="education" class="page">
+            <h1>Education</h1>
+
             <div class="education-item">
                 <h3>B.Sc. in Robotics and Mechatronics Engineering</h3>
-                <p class="education-details">University of Dhaka | 2019 - 2024</p>
-                <p>CGPA: 3.36 / 4.00</p>
-                <p><strong>Relevant Coursework:</strong> Fundamentals of Mechatronics Engineering, Linear Algebra, Instrumentation and Measurement, Microcontroller and Programmable Logic Controller, Advanced Mechatronics Engineering, Artificial Intelligence, Mathematical Analysis, Intelligent Systems and Robotics, Digital Image Processing and Robot Vision, Digital Signal Processing, and Introduction to Machine Learning</p>
+                <p><strong>Institution:</strong> University of Dhaka<br>
+                <strong>Duration:</strong> 2019 - 2024<br>
+                <strong>CGPA:</strong> 3.36 / 4.00</p>
+                
+                <h4>Relevant Coursework:</h4>
+                <ul>
+                    <li>Fundamentals of Mechatronics Engineering</li>
+                    <li>Linear Algebra and Mathematical Analysis</li>
+                    <li>Instrumentation and Measurement</li>
+                    <li>Microcontroller and Programmable Logic Controller</li>
+                    <li>Advanced Mechatronics Engineering</li>
+                    <li>Artificial Intelligence and Machine Learning</li>
+                    <li>Intelligent Systems and Robotics</li>
+                    <li>Digital Image Processing and Robot Vision</li>
+                    <li>Digital Signal Processing</li>
+                </ul>
+                
+                <h4>Thesis Project:</h4>
+                <p>IoT-enabled Scalable Closed Hydroponics System with Smart Parameter Control - A fully funded project that demonstrated integration of IoT, machine learning, and agricultural technology.</p>
             </div>
+
             <div class="education-item">
                 <h3>IGCSE Advanced Subsidiary & Advanced Level</h3>
-                <p class="education-details">SFX Greenherald International School | 2016 - 2018</p>
-                <p>Grades: 3 A* 1 A 1B (Equivalent GPA: 5.00 / 5.00)</p>
+                <p><strong>Institution:</strong> SFX Greenherald International School<br>
+                <strong>Duration:</strong> 2016 - 2018<br>
+                <strong>Grades:</strong> 3 A*, 1 A, 1 B (Equivalent GPA: 5.00 / 5.00)</p>
+                
+                <h4>Subjects:</h4>
+                <ul>
+                    <li>Advanced Level: Mathematics, Physics, Economics</li>
+                    <li>Advanced Subsidiary Level: Further Mathematics, Chemistry</li>
+                </ul>
             </div>
+
             <div class="education-item">
                 <h3>IGCSE Ordinary Level</h3>
-                <p class="education-details">Sunnydale School | 2015 - 2016</p>
-                <p>Grades: 4 A* 4 A (Equivalent GPA: 5.00 / 5.00)</p>
+                <p><strong>Institution:</strong> Sunnydale School<br>
+                <strong>Duration:</strong> 2015 - 2016<br>
+                <strong>Grades:</strong> 4 A*, 4 A (Equivalent GPA: 5.00 / 5.00)</p>
+                
+                <h4>Subjects:</h4>
+                <ul>
+                    <li>Mathematics, Physics, Chemistry, Biology</li>
+                    <li>English Language, Economics, Accounting, ICT</li>
+                </ul>
             </div>
-        </section>
 
-        <section id="awards" class="section">
-            <h2>Awards</h2>
+            <h2>Academic Skills Developed</h2>
+            <ul>
+                <li><strong>Technical Skills:</strong> Programming (Python, C/C++), embedded systems, IoT protocols</li>
+                <li><strong>Research Skills:</strong> Experimental design, data analysis, technical writing</li>
+                <li><strong>Engineering Skills:</strong> System design, sensor integration, automation</li>
+                <li><strong>Soft Skills:</strong> Project management, team collaboration, problem-solving</li>
+            </ul>
+
+            <h2>Academic Achievements</h2>
+            <ul>
+                <li>Completed funded undergraduate thesis project</li>
+                <li>Published research in international conference</li>
+                <li>Consistent high academic performance across all levels</li>
+                <li>Strong foundation in mathematics and engineering principles</li>
+            </ul>
+        </div>
+
+        <!-- Awards Page -->
+        <div id="awards" class="page">
+            <h1>Awards & Recognition</h1>
+
             <div class="award-item">
                 <h3>ICT Innovation Fund Grant</h3>
-                <p class="award-details">ICT Division, Ministry of Posts, Telecommunications and Information Technology, People's Republic of Bangladesh | 2023</p>
-                <p>Awarded during the Fiscal Year 2022-2023 for the project titled "Design of an IoT-enabled Scalable Closed Hydroponics System with Smart Parameter Control"</p>
+                <p><strong>Awarding Body:</strong> ICT Division, Ministry of Posts, Telecommunications and Information Technology, People's Republic of Bangladesh<br>
+                <strong>Year:</strong> 2023 (Fiscal Year 2022-2023)</p>
+                <p><strong>Project:</strong> "Design of an IoT-enabled Scalable Closed Hydroponics System with Smart Parameter Control"</p>
+                <p>This prestigious grant recognizes innovative ICT projects with potential for significant impact. The funding enabled complete development and testing of our hydroponics system.</p>
             </div>
+
             <div class="award-item">
-                <h3>Highest Mark in the Country</h3>
-                <p class="award-details">Cambridge International Examinations | 2018</p>
-                <p>Awarded for the May/June 2017 session for obtaining the Highest Mark in Bangladesh (96%) in Advanced Subsidiary Level Economics</p>
+                <h3>Highest Mark in the Country - Economics</h3>
+                <p><strong>Awarding Body:</strong> Cambridge International Examinations<br>
+                <strong>Year:</strong> 2018<br>
+                <strong>Achievement:</strong> Highest Mark in Bangladesh (96%) in Advanced Subsidiary Level Economics<br>
+                <strong>Session:</strong> May/June 2017</p>
+                <p>This award recognizes exceptional academic performance at the national level in Cambridge International Examinations.</p>
             </div>
+
             <div class="award-item">
                 <h3>The Daily Star Award for A Level</h3>
-                <p class="award-details">The Daily Star | 2018</p>
-                <p>Awarded for the May/June 2018 session for obtaining 3 As or better in IGCSE Advanced Level under Cambridge International Examinations</p>
+                <p><strong>Awarding Body:</strong> The Daily Star<br>
+                <strong>Year:</strong> 2018<br>
+                <strong>Achievement:</strong> Obtained 3 As or better in IGCSE Advanced Level<br>
+                <strong>Session:</strong> May/June 2018</p>
+                <p>Awarded for outstanding performance in Cambridge International A Level examinations, recognizing academic excellence at the highest level.</p>
             </div>
+
             <div class="award-item">
                 <h3>The Daily Star Award for O Level</h3>
-                <p class="award-details">The Daily Star | 2016</p>
-                <p>Cambridge International Examinations
-                    Awarded for the May/June 2016 session for obtaining 6 As or better in IGCSE Ordinary Level under Cambridge International Examinations</p>
+                <p><strong>Awarding Body:</strong> The Daily Star<br>
+                <strong>Year:</strong> 2016<br>
+                <strong>Achievement:</strong> Obtained 6 As or better in IGCSE Ordinary Level<br>
+                <strong>Session:</strong> May/June 2016</p>
+                <p>Awarded for exceptional performance in Cambridge International O Level examinations, demonstrating consistent academic excellence from an early stage.</p>
             </div>
-        </section>
 
-        <section id="contact" class="section">
-            <h2>Contact Me</h2>
+            <!-- <h2>Professional Recognition</h2>
+            <ul>
+                <li><strong>Research Publication:</strong> Accepted for presentation at ICRAI 2024</li>
+                <li><strong>Teaching Assistant:</strong> Selected for CS 2308 position under Dr. Jill M. Seaman</li>
+                <li><strong>Project Funding:</strong> Successfully secured government funding for undergraduate thesis</li>
+                <li><strong>Research Collaboration:</strong> Contributing to interdisciplinary mental health research</li>
+            </ul>
+
+            <h2>Impact of Awards</h2>
+            <p>These awards and recognitions have:</p>
+            <ul>
+                <li>Provided financial support for innovative research projects</li>
+                <li>Recognized academic excellence at national and international levels</li>
+                <li>Opened opportunities for research collaboration and graduate studies</li>
+                <li>Demonstrated consistent high performance across different educational systems</li>
+                <li>Established credibility in both technical and academic domains</li>
+            </ul> -->
+        </div>
+
+        <!-- Contact Page -->
+        <div id="contact" class="page">
+            <h1>Contact Information</h1>
+
             <div class="contact-info">
-                <p>Email: sameer.iqbal2171@gmail.com</p>
-                <p>Phone: (+88)01746224751</p>
-                <p>Location: Dhaka, Bangladesh</p>
+                <h2>Get in Touch</h2>
+                <p><strong>Email:</strong> vsj23@txstate.edu</p>
+                <p><strong>Phone:</strong> (+1) 737-213-7648</p>
+                <p><strong>Location:</strong> San Marcos, Texas, USA</p>
+                <!-- <p><strong>Current Position:</strong> Doctoral Student and Doctoral Instructional Assistant for Fall 2025</p> -->
             </div>
+
+            <div class="contact-info">
+                <h2>Academic Affiliation</h2>
+                <p><strong>Institution:</strong> Texas State University (Current TA Position)</p>
+                <p><strong>Department:</strong> Computer Science</p>
+                <p><strong>Current Position:</strong> Doctoral Student and Doctoral Instructional Assistant for Fall 2025</p>
+                <p><strong>Supervisor:</strong> Dr. Tsz-Chiu Au</p>
+                <!-- <p><strong>Course:</strong> CS 2308</p> -->
+            </div>
+
+            <div class="contact-info">
+                <h2>Research Collaboration</h2>
+                <p><strong>Previous Institution:</strong> University of Dhaka</p>
+                <p><strong>Research Area:</strong> AI-Enabled Detection of Perinatal Depression</p>
+                <p><strong>Status:</strong> Ongoing collaboration (December 2023 - Present)</p>
+            </div>
+
+            <h2>Professional Profiles</h2>
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/msichowdhury/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                <a href="https://github.com/MSIChowdhury" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
-                <!-- <a href="https://scholar.google.com/citations?user=YOUR_GOOGLE_SCHOLAR_ID" target="_blank" rel="noopener noreferrer"><i class="fas fa-graduation-cap"></i> Google Scholar</a> -->
-                <a href="https://x.com/RavenXeen" target="_blank" rel="noopener noreferrer" class="x-link">
-                    <svg viewBox="0 0 24 24" aria-hidden="true" class="x-logo" width="20" height="20">
-                      <path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
-                    </svg>
-                    (Twitter)
-                  </a>
+                <a href="https://www.linkedin.com/in/msichowdhury/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+                <a href="https://github.com/MSIChowdhury" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+                <a href="https://x.com/RavenXeen" target="_blank" rel="noopener noreferrer">Twitter (X)</a>
             </div>
-        </section>
-    </main>
 
-    <footer>
-        <p>&copy; 2024 MD. Sameer Iqbal Chowdhury. All rights reserved.</p>
-    </footer>
+            <div class="contact-info">
+                <h2>Areas of Interest for Collaboration</h2>
+                <ul>
+                    <li>Deep Learning in Robotics</li>
+                    <li>Autonomous Navigation Systems</li>
+                    <!-- <li>Industrial IoT Applications</li> -->
+                    <li>Sensor Fusion and Multi-modal Perception</li>
+                    <!-- <li>Educational Technology and Social Robotics</li>
+                    <li>Graduate Research Opportunities</li> -->
+                </ul>
+            </div>
 
-    <script src="script.js"></script>
+            <div class="contact-info">
+                <h2>Available for</h2>
+                <ul>
+                    <li>Research collaboration and joint projects</li>
+                    <!-- <li>Graduate school opportunities</li> -->
+                    <li>Industry partnerships in robotics and IoT</li>
+                    <!-- <li>Academic presentations and workshops</li> -->
+                    <li>Technical consulting in automation and robotics</li>
+                    <!-- <li>Peer review and academic service</li> -->
+                </ul>
+            </div>
+
+            <h2>Response Time</h2>
+            <p>I typically respond to emails within 24-48 hours. For urgent matters, please indicate "URGENT" in the subject line.</p>
+
+            <h2>Office Hours (Teaching Assistant)</h2>
+            <p>As a Teaching Assistant for CS 2308, I hold regular office hours on Tuesdays (1:30 PM to 4:30 PM) to assist students. Please contact me via email to schedule appointments or check current office hours.</p>
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Update navigation
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // Add active class to clicked link
+            event.target.classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Set initial page
+        document.addEventListener('DOMContentLoaded', function() {
+            showPage('home');
+        });
+
+        // Handle browser back/forward buttons
+        window.addEventListener('popstate', function(e) {
+            if (e.state && e.state.page) {
+                showPage(e.state.page);
+            }
+        });
+
+        // Add history support
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const pageId = this.getAttribute('onclick').match(/showPage\('(.+?)'\)/)[1];
+                history.pushState({page: pageId}, '', `#${pageId}`);
+                showPage(pageId);
+            });
+        });
+
+        // Handle direct URL access
+        window.addEventListener('load', function() {
+            const hash = window.location.hash.substring(1);
+            if (hash && document.getElementById(hash)) {
+                showPage(hash);
+            }
+        });
+    </script>
 </body>
 </html>
