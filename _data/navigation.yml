@@ -1,0 +1,16 @@
+# Relative anchors: the site is served under /MSI-Chowdhury/, so "/#..." would hit the domain root.
+main:
+  - title: "News"
+    url: "#-news"
+  - title: "Research"
+    url: "#-research"
+  - title: "Publications"
+    url: "#-publications"
+  - title: "Projects"
+    url: "#-projects"
+  - title: "Education"
+    url: "#-education"
+  - title: "Honors"
+    url: "#-honors-and-awards"
+  - title: "Experience"
+    url: "#-teaching-and-service"

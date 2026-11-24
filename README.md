@@ -3,20 +3,22 @@
 Personal academic homepage for MD Sameer Iqbal Chowdhury, Ph.D. student in
 Computer Science at Texas State University.
 
-The site is intentionally static and lightweight: `index.html`, `style.css`,
-images, and a linked CV PDF.
+Built with the [AcadHomepage](https://github.com/RayeRen/acad-homepage.github.io) Jekyll template (MIT).
+GitHub Pages builds it automatically on every push to `main`.
+
+All page content lives in `_pages/about.md`; sidebar details are in `_config.yml`.
 
 ## Local Preview
 
 ```bash
-python3 -m http.server 8000
+bundle install && bundle exec jekyll serve
 ```
 
-Then open `http://localhost:8000`.
+Then open `http://localhost:4000`.
 
 ## Update Checklist
 
-- Keep the publication list in `index.html` aligned with the latest CV.
+- Keep the publication list in `_pages/about.md` aligned with the latest CV.
 - Replace `Sameer_s_CV.pdf` when the CV changes.
 - Keep public contact details limited to professional email.
 - Verify image and PDF links before publishing.
