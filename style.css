@@ -48,8 +48,6 @@ li { margin-bottom: 6px; }
 
 .portrait {
   width: 200px;
-  aspect-ratio: 1;
-  object-fit: cover;
   border: 1pt solid #000;
   border-radius: 10%;
 }
@@ -66,9 +64,9 @@ li { margin-bottom: 6px; }
 }
 
 .project img {
+  display: block;
   width: 220px;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+  height: auto;
   border: 1px solid #ccc;
   border-radius: 6px;
 }
@@ -89,7 +87,7 @@ footer {
   h1 { font-size: 28px; }
   .intro, .project { grid-template-columns: 1fr; gap: 16px; }
   .portrait { order: -1; width: 140px; }
-  .project img { width: 100%; }
+  .project img { width: 100%; max-width: 360px; }
   ul { padding-left: 18px; }
   .project { margin-left: -18px; }
 }
