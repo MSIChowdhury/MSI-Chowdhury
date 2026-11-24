@@ -2,66 +2,94 @@
 
 body {
   margin: 0;
-  padding: 20px;
+  padding: 32px 16px;
   background: #e9e9e9;
-  color: #000;
-  font-family: "Times New Roman", Times, serif;
-  font-size: 19px;
-  line-height: 1.4;
+  color: #1a1a1a;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 17px;
+  line-height: 1.6;
 }
 
 .card {
-  max-width: 990px;
+  max-width: 860px;
   margin: 0 auto;
-  padding: 24px 30px;
+  padding: 40px 48px;
   background: #fff;
   border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 }
 
 a { color: #bb0000; text-decoration: none; }
 a:hover, a:focus { text-decoration: underline; }
 
-h1 { margin: 0 0 16px; font-size: 36px; }
+h1 { margin: 0 0 12px; font-size: 34px; line-height: 1.2; }
 
-/* Section labels look like "Teaching:" in bold body text, but stay real headings. */
-h2 { margin: 0 0 4px; font-size: 1em; }
-h2::after { content: ":"; }
+h2 {
+  margin: 0 0 10px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #ddd;
+  font-size: 20px;
+}
 
-section { margin-top: 24px; }
-p { margin: 0 0 12px; }
-ul { margin: 0; }
+section { margin-top: 32px; }
+p { margin: 0 0 10px; }
+ul { margin: 0; padding-left: 22px; }
 li { margin-bottom: 6px; }
-.pubs li { padding-bottom: 10px; }
+.pubs li { margin-bottom: 12px; }
 
 .intro {
   display: grid;
-  grid-template-columns: 1fr 240px;
+  grid-template-columns: 1fr 200px;
   gap: 32px;
   align-items: start;
 }
 
+.intro p:first-of-type { margin-bottom: 2px; }
+
 .portrait {
-  width: 240px;
+  width: 200px;
+  aspect-ratio: 1;
+  object-fit: cover;
   border: 1pt solid #000;
   border-radius: 10%;
 }
 
+.links { margin-top: 14px; }
+
 .project {
   display: grid;
-  grid-template-columns: 1fr 260px;
-  gap: 16px;
+  grid-template-columns: 1fr 220px;
+  gap: 24px;
   align-items: start;
-  margin-bottom: 20px;
+  margin: 0 0 24px -22px; /* projects are cards, not bullets */
+  list-style: none;
 }
 
-.project img { width: 260px; }
+.project img {
+  width: 220px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
 
-footer { margin-top: 32px; font-size: 15px; color: #555; }
+.project ul { margin-top: 6px; }
+
+footer {
+  margin-top: 40px;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+  font-size: 14px;
+  color: #666;
+}
 
 @media (max-width: 700px) {
-  body { padding: 8px; font-size: 17px; }
-  .card { padding: 16px; }
-  .intro, .project { grid-template-columns: 1fr; }
-  .portrait { order: -1; width: 160px; }
-  .project img { width: 100%; max-width: 260px; }
+  body { padding: 0; font-size: 16px; }
+  .card { padding: 24px 18px; border-radius: 0; }
+  h1 { font-size: 28px; }
+  .intro, .project { grid-template-columns: 1fr; gap: 16px; }
+  .portrait { order: -1; width: 140px; }
+  .project img { width: 100%; }
+  ul { padding-left: 18px; }
+  .project { margin-left: -18px; }
 }
